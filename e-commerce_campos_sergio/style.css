@@ -1,17 +1,57 @@
 body {
-    font-family: Arial, sans-serif;
-    line-height: 1.6;
+    font-family: 'Poppins', Arial, sans-serif;
+    background-color: #f0f5f1;
+    color: #333;
 }
 
-header, nav, main, footer {
-    margin: 1em;
-    padding: 1em;
+.navbar {
+    background-color: #28a745;
 }
 
-header, footer {
-    background-color: #f8f8f8;
+.navbar .nav-link, .navbar .navbar-brand {
+    color: white !important;
 }
 
-.organización {
-    margin: 20px 0;
+.navbar .btn-outline-light {
+    border-color: white;
+    color: white;
+}
+
+footer {
+    background-color: #28a745;
+    color: white;
+}
+
+.card {
+    border: none;
+    transition: transform 0.2s ease-in-out;
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
+
+.card-title {
+    font-weight: bold;
+    color: #28a745;
+}
+
+.card-img-top {
+    height: 200px;
+    object-fit: cover;
+}
+
+.btn-success {
+    background-color: #28a745;
+    border: none;
+}
+
+.btn-success:hover {
+    background-color: #218838;
+}
+
+h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    font-weight: bold;
 }
