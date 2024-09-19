@@ -1,0 +1,17 @@
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+}
+
+header, nav, main, footer {
+    margin: 1em;
+    padding: 1em;
+}
+
+header, footer {
+    background-color: #f8f8f8;
+}
+
+.organización {
+    margin: 20px 0;
+}
