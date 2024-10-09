@@ -4,8 +4,73 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ecobiosphera - Productos Sustentables</title>
-    <link rel="stylesheet" href="styles.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <style>
+        body {
+            font-family: 'Poppins', Arial, sans-serif;
+            background-color: #e2efef;
+            color: #333;
+        }
+
+        .navbar {
+            background-color: #78b191; /* Navbar en color predominante */
+        }
+
+        .navbar .nav-link, .navbar .navbar-brand {
+            color: white !important;
+        }
+
+        .navbar .btn-outline-light {
+            border-color: white;
+            color: white;   
+        }
+
+        footer {
+            background-color: #78b191; /* Footer en color predominante */
+            color: white;
+        }
+
+        .card {
+            border: none;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            background-color: #c6e2a3; /* Fondo de tarjeta */
+        }
+
+        .card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .card-title {
+            font-weight: bold;
+            color: #315354; /* Color del título */
+        }
+
+        .card-img-top {
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .btn-success {
+            background-color: #458267; /* Color de fondo del botón */
+            border: none;
+        }
+
+        .btn-success:hover {
+            background-color: #5d887b; /* Color del botón al pasar el ratón */
+        }
+
+        .col-md-4 {
+            padding: 15px;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            font-weight: bold;
+            color: #78b191; /* Color del título principal */
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -34,7 +99,7 @@
                                 <li><a class="dropdown-item" href="#">Empleo</a></li>
                                 <li><a class="dropdown-item" href="#">Dónde encontrarnos</a></li>
                                 <li><hr class="dropdown-divider"></li>
-                                <li><a class="dropdown-item" href="#">Soporte</a></li>
+                                <li><a class="dropdown-item" href="#"></a></li>
                             </ul>
                         </li>
                     </ul>
@@ -55,6 +120,60 @@
     <footer class="text-center bg-success text-white py-3 mt-5">
         <p>&copy; 2024 Ecobiosphera. Todos los derechos reservados.</p>
     </footer>
-    <script src="index.js"></script>
+    <script>
+        // Simulando los productos desde un archivo como producto.js
+        const data = [
+            { id: 1, titulo: "Cepillo de Bambú", imagen: "https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcR4UR3trO6PWcQ7NbkE-Vx9XjtxgRRR_u2e9CtNkbzgMdhCx6vAT2ej7eytQX1yvmJia3qspmmTQoW9pYiqmqP74h1s1aDDA_Dnza_RoD0mza0b675TKQeNQA&usqp=CAE", descripcion: "Un cepillo de dientes biodegradable hecho de bambú." },
+            { id: 2, titulo: "Bolsa Reutilizable", imagen: "https://hebmx.vtexassets.com/arquivos/ids/709660-800-800?v=638497992343770000&width=800&height=800&aspect=true", descripcion: "Bolsa ecológica de algodón orgánico." },
+            { id: 3, titulo: "Botella de Agua de Acero", imagen: "https://m.media-amazon.com/images/I/71hL6s7mggL.jpg", descripcion: "Botella libre de plásticos, reutilizable y resistente." },
+            { id: 4, titulo: "Cubiertos de Madera", imagen: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRpu5q-h2dFwDAddouuihGWMlFeNk5WCmjnXg&s", descripcion: "Set de cubiertos hechos de madera sostenible." },
+            { id: 5, titulo: "Pajilla de Acero", imagen: "https://th.bing.com/th/id/R.51e53e7e3e8a15d68f0446a71e7bd1d0?rik=vcluOhhXtEi2rA&pid=ImgRaw&r=0", descripcion: "Pajilla reutilizable para reducir el consumo de plásticos." }
+        ];
+
+        // Obtener el número de producto de la URL
+        const params = new URLSearchParams(window.location.search);
+        const productId = params.get('prod');  // 'prod' es el parámetro en la URL, ej: ?prod=1
+
+        // Filtrar el producto según el ID de la URL
+        const productoSeleccionado = data.find(producto => producto.id == productId);
+
+        // Seleccionar el contenedor donde se mostrará el producto
+        const section = document.querySelector("#product-list");
+
+        // Si se encuentra el producto correspondiente, lo mostramos
+        if (productoSeleccionado) {
+            section.innerHTML = `
+                <div class="col-md-4">
+                    <div class="card mb-4 shadow-sm">
+                        <img src="${productoSeleccionado.imagen}" class="card-img-top" alt="${productoSeleccionado.titulo}">
+                        <div class="card-body">
+                            <h5 class="card-title text-success">${productoSeleccionado.titulo}</h5>
+                            <p class="card-text">${productoSeleccionado.descripcion}</p>
+                            <a href="#" class="btn btn-success">Comprar</a>
+                        </div>
+                    </div>
+                </div>`;
+        } else {
+            section.innerHTML = "<p>Producto no encontrado.</p>";
+        }
+
+        // Enlace en el listado principal de la Home para cada producto con ?prod=${producto.id}
+        let productoHTML = data.map(producto => `
+            <div class="col-md-4">
+                <div class="card mb-4 shadow-sm">
+                    <img src="${producto.imagen}" class="card-img-top" alt="${producto.titulo}">
+                    <div class="card-body">
+                        <h5 class="card-title text-success">${producto.titulo}</h5>
+                        <p class="card-text">${producto.descripcion}</p>
+                        <a href="detalle.html?prod=${producto.id}" class="btn btn-success">Ver más</a>
+                    </div>
+                </div>
+            </div>`).join("");
+
+        // Asignar el HTML a la sección correspondiente
+        document.querySelector("#product-list").innerHTML = productoHTML;
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-Oz9KpPL0G0gnOd2RmMWtw3xG+D2W6yOfW5T5xSH1B12+sRiOVWW9k2TYkRa50X8e" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-bKjZwZIm8Hn6UtycSe/Cd8F+STBrmAFgB3xh4Kxv8qAjK+Yt6eLz3L1fuM4HufUs" crossorigin="anonymous"></script>
 </body>
 </html>
