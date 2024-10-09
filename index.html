@@ -1,39 +1,50 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ecobiosphera - Productos Sustentables</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Afacad+Flux:wght@100..1000&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <style>
         body {
-            font-family: 'Poppins', Arial, sans-serif;
-            background-color: #e2efef;
-            color: #333;
+            font-family: "Afacad Flux", sans-serif;
+            background-color: #fbfbec;
         }
 
         .navbar {
-            background-color: #78b191; /* Navbar en color predominante */
+            background-color: #5b802c;
         }
 
-        .navbar .nav-link, .navbar .navbar-brand {
+        .navbar .nav-link,
+        .navbar .navbar-brand {
             color: white !important;
+        }
+
+        .navbar .navbar-brand {
+            font-weight: 500;
+            font-size: 2rem;
         }
 
         .navbar .btn-outline-light {
             border-color: white;
-            color: white;   
+            color: white;
         }
 
         footer {
-            background-color: #78b191; /* Footer en color predominante */
+            background-color: #5b802c;
             color: white;
         }
 
         .card {
             border: none;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
-            background-color: #c6e2a3; /* Fondo de tarjeta */
+            background-color: #9dbf54;
+            text-align: center;
+            margin: 15px 0; /* Margen superior e inferior */
         }
 
         .card:hover {
@@ -43,42 +54,69 @@
 
         .card-title {
             font-weight: bold;
-            color: #315354; /* Color del título */
+            color: #062c1d;
         }
 
         .card-img-top {
-            height: 200px;
-            object-fit: cover;
+            width: 100%;
+            height: auto;
+            object-fit: contain;
         }
 
         .btn-success {
-            background-color: #458267; /* Color de fondo del botón */
+            background-color: #315130;
             border: none;
         }
 
         .btn-success:hover {
-            background-color: #5d887b; /* Color del botón al pasar el ratón */
+            background-color: #46594c;
         }
 
+        .brand-container {
+            display: flex;
+            align-items: center;
+        }
+
+        .brand-container img {
+            width: 90px;
+            height: 90px;
+            border-radius: 50%;
+            margin-right: 10px;
+        }
+
+        /* Ajustar márgenes entre columnas */
         .col-md-4 {
-            padding: 15px;
+            flex: 0 0 calc(33.333% - 30px); /* 3 columnas */
+            margin: 15px; /* Margen lateral entre columnas */
         }
 
-        h1 {
-            font-size: 2.5rem;
-            margin-bottom: 20px;
-            font-weight: bold;
-            color: #78b191; /* Color del título principal */
+        .row {
+    margin: 0 0 px; /* Para compensar el margen de las tarjetas */
+}
+
+        @media (max-width: 768px) {
+            .col-md-4 {
+                flex: 0 0 calc(50% - 30px); /* 2 columnas en pantallas pequeñas */
+            }
+        }
+
+        @media (max-width: 576px) {
+            .col-md-4 {
+                flex: 0 0 100%; /* 1 columna en pantallas muy pequeñas */
+            }
         }
     </style>
 </head>
+
 <body>
     <header>
-        <nav class="navbar navbar-expand-lg navbar-light bg-success">
+        <nav class="navbar navbar-expand-lg navbar-light">
             <div class="container-fluid">
-                <a class="navbar-brand text-white" href="#">
-                    <img src="https://i.ibb.co/0QqFJ81/ads-dsa.png" alt="Logo Ecobiosphera" style="height: 90px; margin-right: 10px;">
-                    Ecobiosphera
+                <a class="navbar-brand" href="#">
+                    <div class="brand-container">
+                        <img src="https://i.ibb.co/b6XZ2VT/klasmkda.jpg" alt="Logo Ecobiosphera">
+                        Ecobiosphera
+                    </div>
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -86,20 +124,22 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                         <li class="nav-item">
-                            <a class="nav-link active text-white" aria-current="page" href="#">Inicio</a>
+                            <a class="nav-link active" aria-current="page" href="#">Inicio</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-white" href="#">Productos</a>
+                            <a class="nav-link" href="#">Productos</a>
                         </li>
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle text-white" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                 Nosotros
                             </a>
                             <ul class="dropdown-menu">
                                 <li><a class="dropdown-item" href="#">Empleo</a></li>
                                 <li><a class="dropdown-item" href="#">Dónde encontrarnos</a></li>
-                                <li><hr class="dropdown-divider"></li>
-                                <li><a class="dropdown-item" href="#"></a></li>
+                                <li>
+                                    <hr class="dropdown-divider">
+                                </li>
+                                <li><a class="dropdown-item" href="#">Contacto</a></li>
                             </ul>
                         </li>
                     </ul>
@@ -112,68 +152,58 @@
         </nav>
     </header>
     <main class="container mt-5">
-        <h1 class="text-success text-center mb-4">Productos Sustentables</h1>
+        <h1 class="text-center mb-4" style="color: #5b802c;">Productos Sustentables</h1>
         <section class="row" id="product-list">
             <!-- Productos generados por JavaScript -->
         </section>
     </main>
-    <footer class="text-center bg-success text-white py-3 mt-5">
+    <footer class="text-center py-3 mt-5">
         <p>&copy; 2024 Ecobiosphera. Todos los derechos reservados.</p>
     </footer>
     <script>
-        // Simulando los productos desde un archivo como producto.js
         const data = [
             { id: 1, titulo: "Cepillo de Bambú", imagen: "https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcR4UR3trO6PWcQ7NbkE-Vx9XjtxgRRR_u2e9CtNkbzgMdhCx6vAT2ej7eytQX1yvmJia3qspmmTQoW9pYiqmqP74h1s1aDDA_Dnza_RoD0mza0b675TKQeNQA&usqp=CAE", descripcion: "Un cepillo de dientes biodegradable hecho de bambú." },
             { id: 2, titulo: "Bolsa Reutilizable", imagen: "https://hebmx.vtexassets.com/arquivos/ids/709660-800-800?v=638497992343770000&width=800&height=800&aspect=true", descripcion: "Bolsa ecológica de algodón orgánico." },
             { id: 3, titulo: "Botella de Agua de Acero", imagen: "https://m.media-amazon.com/images/I/71hL6s7mggL.jpg", descripcion: "Botella libre de plásticos, reutilizable y resistente." },
             { id: 4, titulo: "Cubiertos de Madera", imagen: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRpu5q-h2dFwDAddouuihGWMlFeNk5WCmjnXg&s", descripcion: "Set de cubiertos hechos de madera sostenible." },
-            { id: 5, titulo: "Pajilla de Acero", imagen: "https://th.bing.com/th/id/R.51e53e7e3e8a15d68f0446a71e7bd1d0?rik=vcluOhhXtEi2rA&pid=ImgRaw&r=0", descripcion: "Pajilla reutilizable para reducir el consumo de plásticos." }
+            { id: 5, titulo: "Pajilla de Acero", imagen: "https://http2.mlstatic.com/popote-pajilla-acero-inoxidable-curvo-253cm-punta-a-punta-D_NQ_NP_822015-MLM25125437554_102016-F.jpg", descripcion: "Pajilla reutilizable, ideal para bebidas frías." },
+            { id: 6, titulo: "Jabón Natural", imagen: "https://th.bing.com/th/id/OIP.hju3fcQIyvJCb6x4Jh_VgwAAAA?rs=1&pid=ImgDetMain", descripcion: "Jabón hecho a mano con ingredientes naturales." },
+            { id: 7, titulo: "Acondicionador Ecológico", imagen: "https://www.idun-nature.com/images/products/thumbs500/greenatural-acondicionador-citricos-500-ml.jpg", descripcion: "Acondicionador biodegradable hecho con ingredientes naturales." },
+            { id: 8, titulo: "Pasta Dental Natural", imagen: "https://grandeconsumo.com/wp-content/uploads/2020/11/BamBoo_Pasta-de-Dentes-Natural-e-Vegan-All-in-One-1.jpg", descripcion: "Pasta dental libre de flúor y sulfatos." },
+            { id: 9, titulo: "Cepillo de Dientes de Bambu", imagen: "https://panavayu.com/wp-content/uploads/2022/07/Cepillo-Dientes-Blanco-01.jpg", descripcion: "Cepillo de dientes biodegradable y sostenible." },
+            { id: 10, titulo: "Desodorante Natural", imagen: "https://is4.revolveassets.com/images/p4/n/z/EVOR-WU4_V1.jpg", descripcion: "Desodorante en barra sin aluminio ni químicos dañinos." },
+            { id: 11, titulo: "Papel Higiénico Reciclado", imagen: "https://ecologiacotidiana.es/wp-content/uploads/2024/01/papel-higienico-reciclado-envuelto-en-papel-una-opcion-sostenible.jpg", descripcion: "Papel higiénico hecho de papel reciclado." },
+            { id: 12, titulo: "Toallas de Papel Ecológicas", imagen: "https://m.media-amazon.com/images/I/514rF-pGNgL._AC_SX679_.jpg", descripcion: "Toallas de papel hechas de materiales reciclados." },
+            { id: 13, titulo: "Detergente Ecológico", imagen: "https://http2.mlstatic.com/D_NQ_NP_896776-MLM49974050323_052022-O.webp", descripcion: "Detergente biodegradable y libre de químicos." },
+            { id: 14, titulo: "Suavizante Natural", imagen: "https://ecotiendasustentable.cl/wp-content/uploads/2023/03/IMG-20230725-WA0027.jpg", descripcion: "Suavizante hecho con ingredientes naturales." },
+            { id: 15, titulo: "Limpiador Multiusos Ecológico", imagen: "https://th.bing.com/th/id/OIP.ZGdzQ4hFFWt__rsfBbwgQAHaHa?rs=1&pid=ImgDetMain", descripcion: "Limpiador efectivo y respetuoso con el medio ambiente." },
+            { id: 16, titulo: "Esponjas de Limpieza Biodegradables", imagen: "https://m.media-amazon.com/images/I/81JDdXz7DWS._AC_SL1500_.jpg", descripcion: "Esponjas hechas de materiales naturales y biodegradables." },
+            { id: 17, titulo: "Bolsas de Basura Biodegradables", imagen: "https://m.media-amazon.com/images/I/81IxbHMtGWL._AC_SL1500_.jpg", descripcion: "Bolsas de basura que se descomponen de forma natural." },
+            { id: 21, titulo: "Plato Sostenible", imagen: "https://www.absa.com.mx/wp-content/uploads/2021/06/PLATO-10-DIV.jpg", descripcion: "Plato biodegradable hecho de materiales naturales." },
+            { id: 22, titulo: "Vaso Sostenible", imagen: "https://www.fumisan.es/9844-large_default/vaso-de-carton-biodegradables-240-cc-8-oz-50-uds.jpg", descripcion: "Vaso reutilizable fabricado con materiales ecológicos." },
+            { id: 23, titulo: "Toalla para Cuerpo Sostenible", imagen: "https://botanicus.com.mx/wp-content/uploads/2022/06/IMAGEN-TOALLA-DE-BANIO_LINEA-ACCESORIOS_CON-ILUSTRACIONES_NUEVA-TIENDA-ONLINE.jpg.jpg", descripcion: "Toalla de algodón orgánico, suave y biodegradable." }
         ];
 
-        // Obtener el número de producto de la URL
-        const params = new URLSearchParams(window.location.search);
-        const productId = params.get('prod');  // 'prod' es el parámetro en la URL, ej: ?prod=1
-
-        // Filtrar el producto según el ID de la URL
-        const productoSeleccionado = data.find(producto => producto.id == productId);
-
-        // Seleccionar el contenedor donde se mostrará el producto
-        const section = document.querySelector("#product-list");
-
-        // Si se encuentra el producto correspondiente, lo mostramos
-        if (productoSeleccionado) {
-            section.innerHTML = `
+        const productList = document.getElementById('product-list');
+        data.forEach(product => {
+            const productCard = `
                 <div class="col-md-4">
-                    <div class="card mb-4 shadow-sm">
-                        <img src="${productoSeleccionado.imagen}" class="card-img-top" alt="${productoSeleccionado.titulo}">
+                    <div class="card">
+                        <img src="${product.imagen}" class="card-img-top" alt="${product.titulo}">
                         <div class="card-body">
-                            <h5 class="card-title text-success">${productoSeleccionado.titulo}</h5>
-                            <p class="card-text">${productoSeleccionado.descripcion}</p>
-                            <a href="#" class="btn btn-success">Comprar</a>
+                            <h5 class="card-title">${product.titulo}</h5>
+                            <p class="card-text">${product.descripcion}</p>
+                            <button class="btn btn-success">Agregar al carrito</button>
                         </div>
                     </div>
-                </div>`;
-        } else {
-            section.innerHTML = "<p>Producto no encontrado.</p>";
-        }
-
-        // Enlace en el listado principal de la Home para cada producto con ?prod=${producto.id}
-        let productoHTML = data.map(producto => `
-            <div class="col-md-4">
-                <div class="card mb-4 shadow-sm">
-                    <img src="${producto.imagen}" class="card-img-top" alt="${producto.titulo}">
-                    <div class="card-body">
-                        <h5 class="card-title text-success">${producto.titulo}</h5>
-                        <p class="card-text">${producto.descripcion}</p>
-                        <a href="detalle.html?prod=${producto.id}" class="btn btn-success">Ver más</a>
-                    </div>
                 </div>
-            </div>`).join("");
-
-        // Asignar el HTML a la sección correspondiente
-        document.querySelector("#product-list").innerHTML = productoHTML;
+            `;
+            productList.innerHTML += productCard;
+        });
     </script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-Oz9KpPL0G0gnOd2RmMWtw3xG+D2W6yOfW5T5xSH1B12+sRiOVWW9k2TYkRa50X8e" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-bKjZwZIm8Hn6UtycSe/Cd8F+STBrmAFgB3xh4Kxv8qAjK+Yt6eLz3L1fuM4HufUs" crossorigin="anonymous"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz4fnFO9gyb58H4HRm6Uq5P4tQ5zj5DhX04I1LJBO2hS+jvTo3E5IyljR0" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-W+G8c9A4tWJ8aMntSY9HIbAb2LZc7l+N81H/8GrU8h+uQj7PSKjAFR7SHw1Y5K9d" crossorigin="anonymous"></script>
 </body>
+
 </html>
