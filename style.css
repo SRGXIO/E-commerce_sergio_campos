@@ -1,11 +1,11 @@
 body {
     font-family: 'Poppins', Arial, sans-serif;
-    background-color: #f0f5f1;
+    background-color: #e2efef;
     color: #333;
 }
 
 .navbar {
-    background-color: #28a745;
+    background-color: #78b191; /* Navbar en color predominante */
 }
 
 .navbar .nav-link, .navbar .navbar-brand {
@@ -18,22 +18,24 @@ body {
 }
 
 footer {
-    background-color: #28a745;
+    background-color: #78b191; /* Footer en color predominante */
     color: white;
 }
 
 .card {
     border: none;
-    transition: transform 0.2s ease-in-out;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background-color: #c6e2a3; /* Fondo de tarjeta */
 }
 
 .card:hover {
     transform: scale(1.05);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 }
 
 .card-title {
     font-weight: bold;
-    color: #28a745;
+    color: #315354; /* Color del título */
 }
 
 .card-img-top {
@@ -42,19 +44,21 @@ footer {
 }
 
 .btn-success {
-    background-color: #28a745;
+    background-color: #458267; /* Color de fondo del botón */
     border: none;
 }
 
 .btn-success:hover {
-    background-color: #218838;
+    background-color: #5d887b; /* Color del botón al pasar el ratón */
 }
 
-.col-md-3 {
+.col-md-4 {
     padding: 15px;
 }
+
 h1 {
     font-size: 2.5rem;
     margin-bottom: 20px;
     font-weight: bold;
+    color: #78b191; /* Color del título principal */
 }
